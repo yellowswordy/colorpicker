@@ -8,7 +8,7 @@ function App() {
   return (
     <div className="App">
         {/*with ... we unpack all values from palette 5th element*/}
-        <Palette palette={...seedColors[5]}/>
+        <Palette {...seedColors[2]}/>
     </div>
   );
 }
