@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import ColorBox from "./ColorBox";
 import './Palette.css'
+
 class Palette extends Component {
     render() {
         //here we render box all box component from individual palette
