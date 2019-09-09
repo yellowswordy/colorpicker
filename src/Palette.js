@@ -1,11 +1,23 @@
 import React, {Component} from 'react';
 import ColorBox from "./ColorBox";
-import './Palette.css'
 import Navbar from "./Navbar";
 import PaletteFooter from "./PaletteFooter";
+import './Palette.css'
+import {withStyles} from "@material-ui/styles";
+
+const styles = {
+    Palette: {
+        height: '100vh',
+        display: 'flex',
+        flexDirection: 'column',
+    },
+    colors: {
+        height: '90%'
+    }
+}
 
 class Palette extends Component {
-    constructor(props){
+    constructor(props) {
         super(props);
         this.state = {
             level: 500,
@@ -15,17 +27,19 @@ class Palette extends Component {
         this.changeFormat = this.changeFormat.bind(this);
     }
 
-    changeLevel(newLevel){
+    changeLevel(newLevel) {
         this.setState({level: newLevel})
 
     }
-    changeFormat(val){
-        this.setState({format:val})
+
+    changeFormat(val) {
+        this.setState({format: val})
     }
 
     render() {
         const {colors, paletteName, emoji, id} = this.props.palette;
         const {level, format} = this.state;
+        const { classes } = this.props;
         //here we render box all box component from individual palette
         const colorBoxes = colors[level].map(color => (
             <ColorBox
@@ -39,7 +53,7 @@ class Palette extends Component {
             />
         ));
         return (
-            <div className='Palette'>
+            <div className={classes.Palette}>
                 <Navbar
                     level={level}
                     changeLevel={this.changeLevel}
@@ -47,13 +61,13 @@ class Palette extends Component {
                     showingAllColors={true}
                 />
 
-                <div  className='Palette-colors'>
-                {colorBoxes}
+                <div className={classes.colors}>
+                    {colorBoxes}
                 </div>
-            <PaletteFooter paletteName={paletteName} emoji={emoji}/>
+                <PaletteFooter paletteName={paletteName} emoji={emoji}/>
             </div>
         );
     }
 }
 
-export default Palette;
+export default withStyles(styles)(Palette);
