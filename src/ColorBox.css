@@ -1,12 +1,4 @@
-.ColorBox {
-    width: 20%;
-    height: 25%;
-    margin: 0 auto;
-    display: inline-block;
-    position: relative;
-    cursor: pointer;
-    margin-bottom: -3.7px;
-}
+
 .SingleColorPalette .ColorBox {
     height: 50%;
 
@@ -58,19 +50,7 @@
     color: white;
 }
 
-.see-more{
-    background: rgba(255,255,255, 0.3);
-    position: absolute;
-    border: none;
-    right: 0;
-    bottom: 0;
-    color: white;
-    width: 60px;
-    height: 30px;
-    text-align: center;
-    line-height: 30px;
-    text-transform: uppercase;
-}
+
 .dark-text {
     color: rgba(0,0,0,0.5);
 }
