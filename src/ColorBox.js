@@ -4,7 +4,7 @@ import {Link, withRouter} from 'react-router-dom'
 import chroma from 'chroma-js'
 import styles from './styles/ColorBoxStyles'
 import {withStyles} from "@material-ui/styles";
-import "./ColorBox.css";
+
 
 
 
