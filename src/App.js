@@ -1,21 +1,24 @@
-import React, { Component } from "react";
-import { Route, Switch } from "react-router-dom";
+import React, {Component} from "react";
+import {Route, Switch} from "react-router-dom";
 import Palette from "./Palette";
 import PaletteList from "./PaletteList";
 import seedColors from "./seedColors";
 import SingleColorPalette from "./SingleColorPalette";
-import { generatePalette } from "./colorHelpers";
+import {generatePalette} from "./colorHelpers";
+import NewPaletteForm from "./NewPaletteForm";
 
 
 class App extends Component {
     findPalette(id) {
-        return seedColors.find(function(palette) {
+        return seedColors.find(function (palette) {
             return palette.id === id;
         });
     }
+
     render() {
         return (
             <Switch>
+                <Route exact path='/palette/new' render={() => <NewPaletteForm/>}/>
                 <Route
                     exact
                     path='/'
@@ -44,7 +47,7 @@ class App extends Component {
                             )}
                         />
                     )}
-                    />
+                />
             </Switch>
 
             // <div>
