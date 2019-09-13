@@ -1,3 +1,4 @@
+import sizes from "./sizes";
  export default {
     Navbar: {
         display: 'flex',
@@ -18,6 +19,7 @@
             textDecoration: 'none',
             color: 'black',
         },
+
         '& .rc-slider-handle, .rc-slider-handle:active, .rc-slider-handle:focus, .rc-slider-handle:hover': {
             backgroundColor: 'green',
             outline: 'none',
@@ -27,7 +29,10 @@
             height: '13px',
             marginLeft: '-7px',
             marginTop: '-3px',
-        }
+        },
+        [sizes.down('md')]: {
+            width: '150px'
+        },
     },
 
     slider: {
